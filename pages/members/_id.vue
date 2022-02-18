@@ -1,10 +1,16 @@
 <template>
-<h1>hellooo</h1>
+  <MemberDetailView/>
 </template>
 
 <script>
+
+import MemberDetailView from '~/views/MemberDetailView'
+
 export default {
-  name: '_id'
+  name: '_id',
+  components: {
+    MemberDetailView
+  },
 }
 </script>
 
