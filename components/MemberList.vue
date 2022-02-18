@@ -36,6 +36,7 @@ import { Member } from '~/types'
 import { memberService } from '~/services/memberService'
 
 export default {
+  name: 'member-list',
   components: {},
   data() {
     return {
@@ -43,20 +44,20 @@ export default {
       headers: [
         {
           text: 'Avatar',
-          align: 'start',
+          align: 'center',
           filterable: false,
           value: 'avatar_url'
         },
         {
           text: 'Id',
           value: 'id',
-          align: 'start',
+          align: 'center',
           filterable: false
         },
         {
           text: 'Login',
           value: 'login',
-          align: 'start',
+          align: 'center',
           filterable: false
         }
       ],
@@ -77,24 +78,4 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.product-list {
-  padding: 0;
-
-  li {
-    margin-bottom: 2em;
-  }
-}
-
-.product-container {
-  align-items: flex-start;
-  grid-template-columns: 210px 1fr 100px;
-}
-
-.product-container__content {
-  margin-left: 10px;
-}
-
-.button {
-  align-self: stretch;
-}
 </style>

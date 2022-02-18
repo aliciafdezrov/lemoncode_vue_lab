@@ -10,4 +10,13 @@ export const memberService = {
     }).then(m => m.json())
     return members
   },
+
+  async getById(id: string): Promise<Member[]> {
+    const member = await fetch(`https://api.github.com/user/${id}`, {
+      headers: {
+        Accept: 'application/json',
+      },
+    }).then(m => m.json())
+    return member;
+  },
 }
