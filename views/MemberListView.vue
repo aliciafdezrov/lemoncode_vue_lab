@@ -1,9 +1,5 @@
 <template>
-  <div class="home container grid">
-    <h1>HOLAAAAA</h1>
-    <AppBar/>
-    <!--<MemberList />-->
-  </div>
+  <AppBar child-component='member-list'/>
 </template>
 
 <script lang="ts">
@@ -11,10 +7,10 @@ import MemberList from "~/components/MemberList.vue";
 import AppBar from '~/layout/AppBar.vue'
 
 export default {
-  name: 'Home',
+  name: 'MemberListView',
   components: {
     AppBar,
-    //MemberList
+    MemberList
   },
 }
 </script>

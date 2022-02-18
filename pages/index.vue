@@ -1,23 +1,17 @@
 <template>
-  <div class="home container grid">
-    <MemberList />
-  </div>
+  <MemberListView/>
 </template>
 
 <script lang="ts">
-import MemberList from "~/components/MemberList.vue";
+import MemberListView from '~/views/MemberListView.vue'
 
 export default {
   name: 'Home',
   components: {
-    MemberList
+    MemberListView
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.home {
-  grid-template-columns: 60% 1fr;
-  gap: 3rem;
-}
 </style>
