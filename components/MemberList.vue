@@ -9,6 +9,10 @@
         label='Search'
         single-line
         hide-details
+        clear-icon="mdi-close-circle"
+        clearable
+        @click:append="fetchData"
+        @click:clear="clearSearchField"
       ></v-text-field>
     </v-card-title>
     <v-data-table
@@ -64,16 +68,18 @@ export default {
       members: [] as Member[]
     }
   },
-  watch: {
-    search(s) {
-      this.$fetch()
-    }
-  },
   async fetch() {
     this.members = await memberService.get(this.search)
   },
   computed: {},
-  methods: {}
+  methods: {
+    fetchData () {
+      this.$fetch()
+    },
+    clearSearchField () {
+      this.search = ''
+    },
+  }
 }
 </script>
 
