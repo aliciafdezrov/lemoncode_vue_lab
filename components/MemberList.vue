@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      Github Members
+      {{getTitle()}}
       <v-spacer></v-spacer>
       <v-text-field
         :value='membersSearchTerm'
@@ -13,7 +13,7 @@
         clear-icon='mdi-close-circle'
         clearable
         @click:append-outer='fetchData'
-        @click:clear="setMembersSearchTerm('')"
+        @click:clear="handleOnClearSearchTerm"
       ></v-text-field>
     </v-card-title>
     <v-data-table
@@ -81,9 +81,19 @@ export default {
     ...mapActions('Members', {
       setMembersSearchTerm: 'setMembersSearchTerm'
     }),
-    fetchData () {
+    fetchData() {
       this.$fetch()
     },
+    getTitle(): string {
+      if (this.membersSearchTerm) {
+        return `${this.membersSearchTerm.charAt(0).toUpperCase()}${this.membersSearchTerm.substr(1)} members`
+      }
+      return 'Github Members'
+    },
+    handleOnClearSearchTerm() {
+      this.setMembersSearchTerm('')
+      this.members = []
+    }
   }
 }
 </script>
