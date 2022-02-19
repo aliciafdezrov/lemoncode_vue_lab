@@ -25,7 +25,6 @@ export default {
   props: ['childComponent'],
   methods: {
     isRoot() {
-      console.log(this.$nuxt.$route.name)
       return this.$nuxt.$route.name === 'index'
     }
   }

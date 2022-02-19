@@ -19,6 +19,9 @@
     <v-data-table
       :headers='headers'
       :items='members'
+      :loading="$fetchState.pending"
+      loading-text="Calling the members one by one to get the data 🤓"
+      :no-data-text="$fetchState.error ? '$vuetify.noDataText' : '⚠️ Something went wrong'"
     >
       <template v-slot:item.avatar_url='{ item }'>
         <v-avatar>
@@ -66,7 +69,8 @@ export default {
           filterable: false
         }
       ],
-      members: [] as Member[]
+      members: [] as Member[],
+      loading: false
     }
   },
   async fetch() {
