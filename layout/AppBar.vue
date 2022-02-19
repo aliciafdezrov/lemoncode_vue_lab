@@ -5,7 +5,10 @@
       height='100%'
     >
       <v-toolbar color='primary' dark>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon v-if="isRoot()"></v-app-bar-nav-icon>
+        <v-btn icon @click="$nuxt.$router.push('/')" v-else>
+          <v-icon>mdi-arrow-left</v-icon>
+        </v-btn>
         <v-toolbar-title>App</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
@@ -19,7 +22,13 @@
 <script>
 export default {
   name: 'AppBar',
-  props: ['childComponent']
+  props: ['childComponent'],
+  methods: {
+    isRoot() {
+      console.log(this.$nuxt.$route.name)
+      return this.$nuxt.$route.name === 'index'
+    }
+  }
 }
 </script>
 
