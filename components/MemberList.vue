@@ -5,14 +5,14 @@
       <v-spacer></v-spacer>
       <v-text-field
         :value='membersSearchTerm'
-        append-icon='mdi-magnify'
+        append-outer-icon='mdi-magnify'
         label='Search'
         @change='setMembersSearchTerm'
         single-line
         hide-details
         clear-icon='mdi-close-circle'
         clearable
-        @click:append='fetchData'
+        @click:append-outer='fetchData'
         @click:clear="setMembersSearchTerm('')"
       ></v-text-field>
     </v-card-title>
