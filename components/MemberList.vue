@@ -4,15 +4,16 @@
       Github Members
       <v-spacer></v-spacer>
       <v-text-field
-        v-model='search'
+        :value='membersSearchTerm'
         append-icon='mdi-magnify'
         label='Search'
+        @change='setMembersSearchTerm'
         single-line
         hide-details
-        clear-icon="mdi-close-circle"
+        clear-icon='mdi-close-circle'
         clearable
-        @click:append="fetchData"
-        @click:clear="clearSearchField"
+        @click:append='fetchData'
+        @click:clear="setMembersSearchTerm('')"
       ></v-text-field>
     </v-card-title>
     <v-data-table
@@ -29,7 +30,7 @@
       </template>
 
       <template v-slot:item.login='{ item }'>
-        <NuxtLink :to="{ name: 'members-id', params: { id: item.id } }">{{item.login}}</NuxtLink>
+        <NuxtLink :to="{ name: 'members-id', params: { id: item.id } }">{{ item.login }}</NuxtLink>
       </template>
     </v-data-table>
   </v-card>
@@ -38,13 +39,13 @@
 <script lang='ts'>
 import { Member } from '~/types'
 import { memberService } from '~/services/memberService'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'member-list',
   components: {},
   data() {
     return {
-      search: 'lemoncode',
       headers: [
         {
           text: 'Avatar',
@@ -69,15 +70,19 @@ export default {
     }
   },
   async fetch() {
-    this.members = await memberService.get(this.search)
+    this.members = await memberService.get(this.membersSearchTerm)
   },
-  computed: {},
+  computed: {
+    ...mapGetters('Members', {
+      membersSearchTerm: 'membersSearchTerm'
+    }),
+  },
   methods: {
+    ...mapActions('Members', {
+      setMembersSearchTerm: 'setMembersSearchTerm'
+    }),
     fetchData () {
       this.$fetch()
-    },
-    clearSearchField () {
-      this.search = ''
     },
   }
 }
