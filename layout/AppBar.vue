@@ -1,12 +1,12 @@
 <template>
-  <v-app variant='light'>
+  <v-app>
     <v-card
       flat
       height='100%'
     >
-      <v-toolbar color='primary'>
-        <v-app-bar-nav-icon class='icon'></v-app-bar-nav-icon>
-        <v-toolbar-title class='text'>Title</v-toolbar-title>
+      <v-toolbar color='primary' dark>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-toolbar-title>App</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
       <v-container>
@@ -24,11 +24,4 @@ export default {
 </script>
 
 <style scoped>
-.text {
-  color: white;
-}
-
-.icon {
-  color: white;
-}
 </style>
