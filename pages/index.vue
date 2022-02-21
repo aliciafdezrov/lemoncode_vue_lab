@@ -1,15 +1,16 @@
 <template>
-  <MemberListView/>
+  <MemberList/>
 </template>
 
 <script lang="ts">
-import MemberListView from '~/views/MemberListView.vue'
+import MemberList from '~/components/MemberList.vue'
 
 export default {
   name: 'Home',
   components: {
-    MemberListView
+    MemberList
   },
+  layout: 'default'
 }
 </script>
 

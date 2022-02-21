@@ -1,16 +1,16 @@
 <template>
-  <MemberDetailView/>
+  <MemberDetail/>
 </template>
 
 <script>
-
-import MemberDetailView from '~/views/MemberDetailView'
+import MemberDetail from '~/components/MemberDetail'
 
 export default {
   name: '_id',
   components: {
-    MemberDetailView
+    MemberDetail
   },
+  layout: 'default'
 }
 </script>
 
