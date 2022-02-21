@@ -4,7 +4,7 @@
     <v-btn icon @click="$nuxt.$router.push('/')" v-else>
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-toolbar-title>App</v-toolbar-title>
+    <v-toolbar-title>Nuxt App</v-toolbar-title>
     <v-spacer></v-spacer>
   </v-toolbar>
 </template>
