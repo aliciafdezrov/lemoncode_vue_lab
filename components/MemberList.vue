@@ -40,11 +40,12 @@
 </template>
 
 <script lang='ts'>
+import Vue from "vue"
 import { Member } from '~/types'
 import { memberService } from '~/services/memberService'
 import { mapActions, mapGetters } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'MemberList',
   components: {},
   data() {
@@ -99,7 +100,7 @@ export default {
       this.members = []
     }
   }
-}
+})
 </script>
 
 <style lang='scss' scoped>
