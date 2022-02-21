@@ -45,7 +45,7 @@ import { memberService } from '~/services/memberService'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'list',
+  name: 'MemberList',
   components: {},
   data() {
     return {
