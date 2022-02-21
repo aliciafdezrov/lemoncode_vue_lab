@@ -1,6 +1,6 @@
 # MiniappVue
 
-Este proyecto fue generado con [Nuxt](https://nuxtjs.org/) y hace uso de la librería de Vuetify para el estilado de los componentes. Para
+Este proyecto fue generado con [Nuxt](https://nuxtjs.org/) versión 2.15.8. Además hace uso de la librería de Vuetify v2.6.1 para el estilado de los componentes. Para
 arrancar el proyecto ejecutar `npm run dev`. Navegar a [http://localhost:3000](http://localhost:3000/).
 
 ## Documentación del proyecto

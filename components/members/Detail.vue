@@ -29,7 +29,7 @@
 import { memberService } from '~/services/memberService'
 
 export default {
-  name: 'MemberDetail',
+  name: 'Detail',
   components: {},
   data() {
     return {
